@@ -1,3 +1,4 @@
+// import { describe } from "node:test";
 import { setCardType } from "../main.js"
 import {
   securityCode,
@@ -19,11 +20,11 @@ const ccNumber = document.querySelector(".cc-number");
 const ccExpiration = document.querySelector(".cc-expiration .value");
 
 addButton.addEventListener("click", () => {
-  if (cardHolder.value === "" || cardNumber.value === ""
-    || expirationDate === "" || securityCode === "") {
-    alert("Nenhum cartão adicionado. Por favor preencha os campos corretamente!")
+  if (cardHolder.value.length === 0 || cardNumber.value.length === 0
+    || expirationDate.value.length === 0 || securityCode.value.length === 0) {
+    return alert("Nenhum cartão adicionado. Por favor preencha os campos corretamente!")
   } else {
-    alert("Cartão adicionado!")
+    return alert("Cartão adicionado!")
   }
 })
 
